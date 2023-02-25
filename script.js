@@ -73,10 +73,24 @@ function deleteAlarm(clickedButton) {
   console.log(alarmTimes)
 }
 
+let executed = false
 setInterval(() => {
   const currentTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-  if (alarmTimes.time.includes(currentTime)) {
-    alert(`Alarm at ${currentTime}!`);
-    alarmTimes = alarmTimes.filter((time) => time !== currentTime);
-  }
+  alarmTimes.forEach((time) => {
+    if (time.time === currentTime && time.isChecked === true) {
+      if (!executed) {
+        executed = true
+        playSound()
+    }
+      alarmTimes = alarmTimes.filter((time) => time.time !== currentTime);
+    }
+  })
 }, 1000);
+
+function playSound() {
+  var sound = new Audio('assets/sounds/iPhone-Alarm.mp3');
+  sound.addEventListener('canplaythrough', (event) => {
+  sound.loop = true;
+  sound.play();
+});
+}
