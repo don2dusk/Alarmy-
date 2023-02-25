@@ -16,7 +16,14 @@
             </div>
             <button id = "add-alarm">Add Alarm</button>
             <div id = "alarm-container">
-
+                <div id = "alarm">
+                    <p class = "set-time">${time}</p>
+                    <label class="switch">
+                        <input type = "checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <button id = "del" onclick="deleteAlarm(`${index}`)"><img class = "del" src = "assets/imgs/trash.png" width="20px" height="20px"></button>
+                </div>
             </div>
         </div>
         <script src="script.js"></script>

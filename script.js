@@ -31,13 +31,9 @@ function updateAlarms() {
                 <input type = "checkbox">
                 <span class="slider round"></span>
             </label>
-            <button id = "del"><img class = "del" src = "assets/imgs/trash.png" width="20px" height="20px"></button>
+            <button id = "del" on><img class = "del" src = "assets/imgs/trash.png" width="20px" height="20px"></button>
         </div>`;
         alarms_list.innerHTML += alarm;
-        const del_button = document.querySelectorAll("#del")
-        del_button.forEach(button => button.addEventListener("click", function() {
-            button.parentElement.parentElement.removeChild(button.parentElement);
-            alarmTimes.splice(index, 1);
-        })
-    )});
+        }
+    )
   }
