@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alarmy!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-    <body>
-        <div id = "container">
-            <h1 id = "clock">13:59:59</h1>
-            <div id = "time-select">
-                <p>Set An Alarm For:</p>
-                <input type = "time" id = "alarm-time">
-            </div>
-            <button id = "add-alarm">Add Alarm</button>
-            <div id = "alarm-container">
-                <div id = "alarm">
-                    <p class = "set-time">${time}</p>
-                    <label class="switch">
-                        <input type = "checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                    <button id = "del" onclick="deleteAlarm(`${index}`)"><img class = "del" src = "assets/imgs/trash.png" width="20px" height="20px"></button>
-                </div>
-            </div>
-        </div>
-        <script src="script.js"></script>
-    </body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="clock">13:59:59</h1>
+      <div id="time-select">
+        <p>Set An Alarm For:</p>
+        <input type="time" id="alarm-time" />
+      </div>
+      <button id="add-alarm">Add Alarm</button>
+      <div id="alarm-container"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
