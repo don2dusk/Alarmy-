@@ -1,14 +1,35 @@
 const clock = document.getElementById("clock");
-
-setInterval(() => {
-  const date = new Date();
-  clock.textContent = date.toLocaleTimeString();
-}, 1000);
-
+const SOUNDLENGTH = 6000;
+let executed = false;
+let alarmTimes = [];
 const alarms_list = document.getElementById("alarm-container");
 const add_button = document.getElementById("add-alarm");
+var sound = new Audio("assets/sounds/iPhone-Alarm.mp3");
+sound.loop = true;
 
-let alarmTimes = [];
+setInterval(() => {
+  // This sets the clock div to the current date
+  const date = new Date();
+  clock.textContent = date.toLocaleTimeString("en-us", { hour12: false });
+
+  // This removes the seconds part of the clock
+  let currentTime = clock.textContent.substring(0, 5);
+
+  // We then check every alaram to see if it has rang
+  alarmTimes.forEach((time, index) => {
+    if (time.time === currentTime && time.isChecked === true) {
+      if (!executed) {
+        executed = true;
+        playSound();
+
+        // Set isChecked to false and uncheck the checkbox from the HTML
+        time.isChecked = false;
+        var checkeditems = document.querySelectorAll("#slid");
+        checkeditems[index].checked = false;
+      }
+    }
+  });
+}, 1000);
 
 add_button.addEventListener("click", function () {
   addAlarm();
@@ -17,11 +38,10 @@ add_button.addEventListener("click", function () {
 function addAlarm() {
   const alarm_time = document.getElementById("alarm-time").value;
   if (alarm_time) {
-    alarmTimes.push({time: alarm_time, isChecked: true});
+    alarmTimes.push({ time: alarm_time, isChecked: true });
     let alarmElement = document.createElement("div");
     alarmElement.id = "alarm";
-    console.log(alarmTimes);
-    alarmElement.innerHTML +=`
+    alarmElement.innerHTML += `
             <p class = "set-time">${alarm_time}</p>
             <label class="switch">
                 <input type = "checkbox" id="slid" onchange = "ischecked(this)" checked>
@@ -29,7 +49,7 @@ function addAlarm() {
             </label>
             <button id = "del" onClick=deleteAlarm(this)><img class = "del" src = "assets/imgs/trash.png" width="20px" height="20px"></button>`;
     alarms_list.appendChild(alarmElement);
-  };
+  }
 }
 
 function ischecked(object) {
@@ -47,11 +67,8 @@ function ischecked(object) {
 
   if (object.checked) {
     alarmTimes[index].isChecked = true;
-    console.log(alarmTimes);
-  }
-  else {
+  } else {
     alarmTimes[index].isChecked = false;
-    console.log(alarmTimes);
   }
 }
 
@@ -70,27 +87,19 @@ function deleteAlarm(clickedButton) {
 
   alarmTimes.splice(index, 1);
   clickedButton.parentElement.remove();
-  console.log(alarmTimes)
 }
 
-let executed = false
-setInterval(() => {
-  const currentTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-  alarmTimes.forEach((time) => {
-    if (time.time === currentTime && time.isChecked === true) {
-      if (!executed) {
-        executed = true
-        playSound()
-    }
-      alarmTimes = alarmTimes.filter((time) => time.time !== currentTime);
-    }
-  })
-}, 1000);
-
 function playSound() {
-  var sound = new Audio('assets/sounds/iPhone-Alarm.mp3');
-  sound.addEventListener('canplaythrough', (event) => {
-  sound.loop = true;
   sound.play();
-});
+  setTimeout(stopPlaying, SOUNDLENGTH);
+}
+
+function stopPlaying() {
+  sound.pause();
+  sound.currentTime = 0;
+  executed = false;
+
+  // This is for scenarios where you have a button to stop playing
+  // We don't want to keep the stop the initial timeout
+  clearTimeout();
 }
