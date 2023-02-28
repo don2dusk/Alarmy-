@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarmy!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <section id = "home">
+            <header>
+                <a href = "#home" id = "title">Alarmy!</a>
+                <div id = "menu">
+                    <a href = "#features" class = "about">Features</a>
+                    <a href = "#demo" class = "demo">Demo</a>
+                </div>
+            </header>
+            <div id = "home-div">
+                <div id = "home-text">
+                    <h1>More than just</h1>
+                    <h1>An Everyday <span>Alarm.</span></h1>
+                    <p>A sophisticated bit of Software Engineering marvel brings about the most intuitive and minimalist alarm clock on a website yet. Tailored to your rigorous demands.</p>
+                    <div id = "additional-buttons">
+                        <a href = "#demo"><button id = "try">Try it out</button></a>
+                        <a href="#features"><button id = "learn">Learn More</button></a>
+                    </div>
+                </div>
+                <div id = "video-div">
+                    <video id = "bg-video" autoplay muted loop>
+                        <source src = "assets/vids/db20d808a4f04a33a57b962eba5a78b9.mp4" type = "video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+        <section id = "features">
+            <div id = "about-div">
+                <div id = "about-top">
+                    <div id = "point-1">
+                        <div id = "icons">
+                            <img src = "assets/imgs/layers.png">
+                        </div>
+                        <h1>Simple.</h1>
+                        <p>Numerous thoughtful and intuitive touches has made the User Experience easy to use.</p>
+                    </div>
+                    <div id = "point-2">
+                        <div id = "icons">
+                            <img src = "assets/imgs/free.png">
+                        </div>
+                        <h1>Free.</h1>
+                        <p>Alarmy comes free with no additional costs while ensuring maximum satisfaction.</p>
+                    </div>
+                    <div id = "point-3">
+                        <div id = "icons">
+                            <img src = "assets/imgs/working-hours.png">
+                        </div>
+                        <h1>Multiple Alarm Support.</h1>
+                        <p>Allows you to place multiple continuous alarms at once in order to match your everyday needs.</p>
+                    </div>
+                </div>
+                <div id = "about-bottom">
+                    <div id = "about-card1">
+                        <h1>Less clutter, more flexibility.</h1>
+                        <p>Spend less time setting alarmy up and more time on the activities that are more important.</p>
+                        <img src = "assets/imgs/screenshots/alarmy_ss1.png">
+                    </div>
+                    <div id = "about-card2">
+                        <h1>Seamlessly integrate into your workflow.</h1>
+                        <p>Built to withstand and keep up with you from simple everyday workflows to more complex ones.</p>
+                        <img src = "assets/imgs/screenshots/alarmy_ss2.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id = "demo">
+            <div id = "body">
+            <div id = "container">
+                <h1 id = "clock">13:59:59</h1>
+                <div id = "time-select">
+                    <p>Set An Alarm For:</p>
+                    <input type = "time" id = "alarm-time" value="09:41">
+                </div>
+                <button id = "add-alarm">Add Alarm</button>
+                <div id = "alarm-container">
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- <button class = "switch">☀︎</button> -->
+        <footer>
+            <hr>
+            <div>
+                <p>©2023 Alarmy Inc. Created by don2dusk.</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
