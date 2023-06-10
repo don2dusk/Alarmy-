@@ -10,7 +10,7 @@ Alarmy is a fully functional and responsive Alarm Web App designed with HTML, CS
 
 ## Getting Started
 
-To use Alarmy, follow these steps:
+To use Alarmy Locally on your device, follow these steps:
 
 1. Clone the repository or download the source code files.
 2. Open the `index.html` file in your preferred web browser.
@@ -20,7 +20,9 @@ To use Alarmy, follow these steps:
 6. Save the alarm, and it will appear in the alarm list.
 7. Enable or disable alarms by toggling the alarm switch.
 8. Click on the alarm to edit or delete it as needed.
-9. Enjoy using Alarmy to manage your alarms efficiently!
+9. Enjoy using Alarmy to manage your alarms efficiently.
+
+You can also visit [Alarmy's Website](https://don2dusk.github.io/alarmy-) to use it as a web app.
 
 ## Technologies Used
 
