@@ -22,7 +22,7 @@ To use Alarmy Locally on your device, follow these steps:
 8. Click on the alarm to edit or delete it as needed.
 9. Enjoy using Alarmy to manage your alarms efficiently.
 
-You can also visit [Alarmy's Website](https://don2dusk.github.io/alarmy-) to use it as a web app.
+You can also visit [Alarmy's Website](https://don2dusk.github.io/Alarmy-/) to use it as a web app.
 
 ## Technologies Used
 
